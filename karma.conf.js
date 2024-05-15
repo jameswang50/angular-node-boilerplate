@@ -11,9 +11,11 @@ module.exports = function (config) {
       require('karma-remap-istanbul'),
       require('angular-cli/plugins/karma')
     ],
+
     files: [
       { pattern: './client/test.ts', watched: false }
     ],
+
     preprocessors: {
       './client/test.ts': ['angular-cli']
     },
