@@ -11,15 +11,18 @@ require(__dirname + '/server/express')(app);
 /**
  * Create HTTP server.
  */
+
 const server = http.createServer(app);
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
 
+
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
+
 
 /**
  * Listen on provided port, on all network interfaces.
